@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by noribozo (http://jsbin.com/caroqic/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="how many triangles">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Practice JavaScript by drawing</title>
+</head>
+<body>
+  <canvas id="myCanvas" height="300" width="450" style="border: 1px solid black"></canvas>
+<script id="jsbin-javascript">
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+var cw = canvas.width;
+var ch = canvas.height;
+
+context.strokeStyle = "rgba(0, 0, 255, 0.6)";
+
+
+for(var i= 0; i<= cw; i++){
+  context.beginPath();
+  context.moveTo(i, ch/2);
+  if(i%4===0){
+    context.lineTo(0, 0);
+ }if(i%4===1){
+    context.lineTo(cw, 0);
+  }if(i%4===2){
+    context.lineTo(0, ch);
+}if(i%4===3){
+    context.lineTo(cw, ch);
+}
+
+context.stroke();
+context.closePath();
+}
+/*Járd be a canvas horizontális felezővonalát, és húzz pixelenként egy vonalat. Ha a kiindulási x-koordináta néggyel osztva
+
+nem ad maradékot, akkor a (0,0) pontba,
+egyet ad maradékul, akkor a (cw,0) pontba,
+ha kettőt ad maradékul, akkor a (0,ch) pontba,
+ha hármat ad maradékul, akkor a (cw,ch) pontba,
+ahol cw a canvas szélessége és ch a canvas magassága pixelben.*/
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
